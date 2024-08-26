@@ -8,7 +8,7 @@
   },
   "author": "ibrahemassa",
   "license": "ISC",
-  "description": "A web app for explore animes and get thier information from MyAnimeList using Jikan API.",
+  "description": "A web app for exploring animes and get thier information from MyAnimeList using Jikan API.",
   "dependencies": {
     "axios": "^1.7.5",
     "ejs": "^3.1.10",
