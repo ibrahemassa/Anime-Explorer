@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/search.css" />
+  <title>Search Results</title>
+</head>
+<body>
+  <div class="card" id="form_card">
+    <form action="/search" method="get">
+      <input type="text" name="q" placeholder="Enter search query" required>
+      <input type="submit" value="Search">
+    </form>
+  </div>
+  <div class="card">
+
+  <h1>Search Results for "<%= query %>":</h1>
+
+  <% if (error) { %>
+    <p><%= error %></p>
+  <% } else { %>
+    <ul>
+      <% results.forEach(result => { %>
+        <li>
+          <a href="/anime?id=<%= result.mal_id %>"><%= result.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <a href="/">Back to Home</a>
+  </div>
+</body>
+</html>

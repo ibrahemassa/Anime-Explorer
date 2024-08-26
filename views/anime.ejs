@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <title><%= anime.title %></title>
+    </head>
+    <body>
+        <div class="card">
+            <img
+                href="<%= anime.url %>"
+                src="<%= anime.images.jpg.image_url %>",
+                alt="<%= anime.title %>",
+            />
+            <div class="content">
+              <h2><%= anime.title %></h2>
+
+              <% if (anime.title != anime.title_english){%>
+                <h3><%= anime.title_english %></h3>
+                <% } else { %>
+                  <h3></h3>
+                <% } %>
+
+
+                <div class="details">
+                    <p><strong>Score:</strong><span><%= anime.score %></span></p>
+                    <p><strong>Rank:</strong><span><%= anime.rank %></span></p>
+                    <% if (anime.episodes) {%>
+                      <p><strong>Episodes:</strong><span><%= anime.episodes %></span></p>
+                    <% } else {%>
+                      <p><strong>Episodes:</strong><span>Currently Airing</span></p>
+                    <% } %>
+                    <p><strong>Studios:</strong><span><%= anime.studios[0].name %></span></p>
+                    <a href="<%= anime.url %>"><img src="https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"></a>
+                </div>
+
+                <div class="genres">
+                  <% for(let i = 0; i < anime.genres.length; i++){ %>
+                    <span><%= anime.genres[i].name %></span>
+                    <% } %>
+                </div>
+                <div class="synopsis"><p><%= anime.synopsis %></p></div>
+            </div>
+        </div>
+    </body>
+</html>
