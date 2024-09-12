@@ -23,7 +23,12 @@
     <ul>
       <% results.forEach(result => { %>
         <li>
-          <a href="/anime?id=<%= result.mal_id %>"><%= result.title %></a>
+          <a href="/anime?id=<%= result.mal_id %>">
+            <div class="image-con">
+                <img src="<%= result.images.jpg.image_url %>">
+                <p id="score">⭐<%= result.score %></p>
+            </div>
+          <%= result.title %></a>
         </li>
       <% }) %>
     </ul>

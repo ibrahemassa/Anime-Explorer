@@ -7,8 +7,9 @@ const API_URL = "https://api.jikan.moe/v4/anime/";
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.render("home.ejs");
+app.get("/", async (req, res) => {
+  const result = await axios.get("https://api.jikan.moe/v4/top/anime", {params:{limit:20}});
+  res.render("home.ejs", {results: result.data.data});
 });
 
 app.get("/search", async (req, res) => {
@@ -24,7 +25,7 @@ app.get("/search", async (req, res) => {
     let searchConfig = {
       params: {
         q: query,
-        limit: 15,
+        limit: 16,
         order_by: "score",
         sort: "desc",
       },
