@@ -24,7 +24,7 @@
 
 
                 <div class="details">
-                    <p><strong>Score:</strong><span>⭐<%= anime.score %></span></p>
+                    <p><strong>Score:</strong><span>⭐<%= anime.score.toFixed(2) %></span></p>
                     <p><strong>Rank:</strong><span><%= anime.rank %></span></p>
                     <% if (anime.episodes) {%>
                       <p><strong>Episodes:</strong><span><%= anime.episodes %></span></p>

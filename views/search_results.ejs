@@ -26,7 +26,7 @@
           <a href="/anime?id=<%= result.mal_id %>">
             <div class="image-con">
                 <img src="<%= result.images.jpg.image_url %>">
-                <p id="score">⭐<%= result.score %></p>
+                <p id="score">⭐<%= result.score.toFixed(2) %></p>
             </div>
           <%= result.title %></a>
         </li>
